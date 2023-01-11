@@ -25,7 +25,7 @@ body {
 
     font-family: var(--ff-primary);
     display: grid;
-    justify-items: center;
+    place-content: center;
     background-color: var(--bg-body);
     
     padding-top: 5rem;
@@ -36,6 +36,30 @@ main {
     border-radius: 1rem;
     background-color: var(--bg-primary);
     max-height: 50rem;
+
+    animation: topdown 0.7s backwards;
+}
+
+@keyframes topdown {
+    0% {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes left {
+    0% {
+        opacity: 0;
+        transform: translateX(-15px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
     
 #capa {
@@ -101,6 +125,32 @@ main {
     color: var(--fc-secondary);
     font-family: var(--ff-primary);
     font-size: 1.4rem;
+}
+
+@media (min-width: 700px){
+    header {
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+    }
+
+    main {
+        height: 29rem;
+        animation: left 0.7s;
+    }
+
+    .info {
+        padding-top: 0;
+    }
+
+    #capa {
+        width: 8.4rem;
+        height: 8.4rem;
+    }
+
+    .player {
+        place-content: center;
+    }
 }
 
     
